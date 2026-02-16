@@ -3,270 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>II-TAMP | Evento MMA Abril 2026</title>
+<title>TAMP | Torneo de Artes Marciales</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background: 
-        linear-gradient(rgba(75,0,21,0.85), rgba(26,0,8,0.95)),
-        url('img/fondo1.png') no-repeat center center fixed;
-    background-size:cover;
-    color:white;
+    font-family:'Cinzel', serif;
+    background:#0f0f0f;
+    color:#d6c2a1;
 }
 
-
-/* HEADER */
+/* ===== HEADER ===== */
 header{
-    background:linear-gradient(to bottom, #2a000c, #000000);
+    background:linear-gradient(to bottom, #1c1a17, #0a0a0a);
     padding:20px;
     text-align:center;
-    border-bottom:3px solid gold;
+    border-bottom:2px solid #6e5c3c;
 }
 
-/* MENÚ */
 nav{
     margin-bottom:15px;
 }
 
 nav a{
-    color:gold;
+    color:#b89b6d;
     text-decoration:none;
-    margin:0 15px;
+    margin:0 12px;
     font-weight:bold;
-    transition:0.3s;
+    letter-spacing:2px;
+    font-size:14px;
 }
 
-nav a:hover{
-    color:white;
-}
-
-/* LOGO */
+/* LOGO RESPONSIVE */
 .logo{
-    width:380px;
-    margin-bottom:20px;
-    filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
-    transition:0.3s;
+    width:180px;
+    max-width:60%;
+    height:auto;
+    margin-bottom:10px;
 }
 
-.logo:hover{
-    transform:scale(1.05);
-}
-
-/* ====== BANNER EFECTOS ====== */
-.banner{
-    position:relative;
-    padding:100px 20px;
-    margin-top:20px;
-    overflow:hidden;
-    border-top:2px solid gold;
-    border-bottom:2px solid gold;
+/* ===== FONDO PIEDRA OSCURO DEBAJO DEL LOGO ===== */
+.stone-divider{
+    background:linear-gradient(to bottom, #2b2721, #141210);
+    padding:25px 20px;
+    border-top:1px solid #6e5c3c;
+    border-bottom:1px solid #6e5c3c;
     text-align:center;
-    background:black;
 }
 
-/* Fondo con movimiento lento */
-.banner::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:120%;
-    height:120%;
-    background:url('img/fondo.jpg') no-repeat center/cover;
-    animation:moverFondo 20s linear infinite alternate;
-    opacity:0.35;
+/* TITULO AUTOESCALABLE */
+h1{
+    font-size:clamp(28px, 6vw, 55px);
+    letter-spacing:4px;
+    color:#d6c2a1;
+    text-shadow:
+        2px 2px 0 #3a3328,
+        4px 4px 8px rgba(0,0,0,0.8);
+    margin:10px 0;
 }
 
-/* Efecto humo + luz estadio */
-.banner::after{
-    content:"";
+/* SUBINFO RESPONSIVE */
+.subinfo{
+    font-size:clamp(14px, 3.5vw, 18px);
+    letter-spacing:1px;
+    color:#b89b6d;
+    line-height:1.6;
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section{
+    position:relative;
+    height:60vh;
+    min-height:350px;
+    max-height:600px;
+    overflow:hidden;
+}
+
+.video-section video{
     position:absolute;
-    top:0;
-    left:0;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%,-50%);
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
     width:100%;
     height:100%;
-    background:
-        radial-gradient(circle at center,
-        rgba(255,215,0,0.25),
-        rgba(75,0,21,0.85));
-}
-
-/* Animación fondo */
-@keyframes moverFondo{
-    0%{ transform:scale(1) translate(0,0); }
-    100%{ transform:scale(1.1) translate(-30px,-20px); }
-}
-
-
-/* TÍTULOS */
-h1{
-    color:gold;
-    font-size:42px;
-    letter-spacing:3px;
-}
-
-/* BOTONES */
-button{
-    background:linear-gradient(45deg, red, darkred);
-    color:white;
-    padding:12px 25px;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
-    transition:0.3s;
-    font-size:16px;
-    margin:10px;
-}
-
-button:hover{
-    transform:scale(1.1);
-}
-
-/* HERO */
-.hero{
-    background:url('img/fondo.jpg') no-repeat center center/cover;
-    height:500px;
+    background:rgba(15,15,15,0.75);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
-}
-
-.hero h2{
-    font-size:50px;
-    background:rgba(0,0,0,0.7);
     padding:20px;
-    border:2px solid gold;
 }
 
-/* CONTADOR */
+.video-overlay h2{
+    font-size:clamp(18px, 5vw, 42px);
+    letter-spacing:2px;
+    color:#d6c2a1;
+    text-shadow:2px 2px 6px black;
+    border:1px solid #6e5c3c;
+    padding:12px 20px;
+}
+
+/* CONTADOR RESPONSIVE */
 #contador{
-    font-size:75px;
-    margin-top:25px;
-    color:#ffd700;
+    font-size:clamp(22px, 6vw, 60px);
+    margin-top:20px;
+    color:#e2d2b0;
     font-weight:bold;
+    text-shadow:0 0 10px black;
+}
+
+/* TEXTO CUENTA REGRESIVA */
+.cuenta-texto{
+    margin-top:10px;
+    font-size:clamp(14px,3vw,18px);
     letter-spacing:3px;
-    text-shadow:0 0 8px rgba(255,215,0,0.4);
-}
-
-
-/* SECCIONES */
-.section{
-    padding:60px 20px;
-    text-align:center;
-}
-
-/* CARTELERA */
-.cartelera{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
-
-.peleador{
-    background:#111;
-    padding:20px;
-    border-radius:10px;
-    width:250px;
-    transition:0.3s;
-    box-shadow:0 0 20px rgba(255,215,0,0.4);
-}
-
-.peleador:hover{
-    transform:scale(1.05);
-}
-
-.peleador img{
-    width:100%;
-    border-radius:10px;
+    color:#b89b6d;
 }
 
 /* FOOTER */
 footer{
-    background:black;
-    padding:20px;
+    background:#0a0a0a;
+    padding:15px;
     text-align:center;
-    margin-top:40px;
-    border-top:2px solid gold;
+    border-top:1px solid #6e5c3c;
+    font-size:13px;
+    color:#b89b6d;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero h2{
-        font-size:30px;
+/* ===== MOBILE AJUSTE ===== */
+@media(max-width:480px){
+
+    nav a{
+        display:inline-block;
+        margin:5px 8px;
+        font-size:12px;
     }
 
-    #contador{
-        font-size:40px;
+    .stone-divider{
+        padding:20px 15px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<header class="animate__animated animate__fadeInDown">
-
+<header>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="peleadores.html">Peleadores</a>
+        <a href="#">Inicio</a>
+        <a href="#">Peleadores</a>
     </nav>
 
     <img src="img/logo.png" class="logo">
-
-    <h1>🔥 II-TAMP 🔥</h1>
-    <p>19 de Abril 2026 | Perote, Veracruz</p>
-
-    <button>Comprar Boletos</button>
-    <a href="peleadores.html">
-        <button>Ver Peleadores</button>
-    </a>
-
 </header>
 
-<div class="hero">
-    <h2 class="animate__animated animate__zoomIn">
-        LA GUERRA COMIENZA EN ABRIL
-    </h2>
-    <div id="contador"></div>
-</div>
+<!-- FONDO PIEDRA DEBAJO DEL LOGO -->
+<section class="stone-divider">
+    <h1>II-TAMP</h1>
+    <div class="subinfo">
+        TORNEO DE ARTES MARCIALES PEROTE<br>
+        TANURÍN - Alejandro Von Humboldt Sur<br>
+        19 DE ABRIL 2026 – PEROTE, VERACRUZ
+    </div>
+</section>
 
-<div class="section">
-    <h2>🔥 CARTELERA PRINCIPAL 🔥</h2>
+<section class="video-section">
 
-    <div class="cartelera">
+    <video autoplay muted loop playsinline>
+        <source src="img/video.mp4" type="video/mp4">
+    </video>
 
-        <div class="peleador">
-            <img src="img/peleador1.jpg" alt="Ulises">
-            <h3>Ulises</h3>
-            <p>Peso Welter</p>
-        </div>
+    <div class="video-overlay">
+        <h2>
+            PELEADORES DE PEROTE, XALAPA Y HUAMANTLA
+        </h2>
 
-        <div class="peleador">
-            <img src="img/peleador2.jpg" alt="Luis La Bestia">
-            <h3>Luis "La Bestia"</h3>
-            <p>Peso Welter</p>
-        </div>
+        <div id="contador"></div>
+        <div class="cuenta-texto">CUENTA REGRESIVA</div>
 
     </div>
-</div>
 
-<div class="section">
-    <h2>Información del Evento</h2>
-    <p>Hora: 2:00 PM</p>
-    <p>Preventa: $150</p>
-    <p>General: $200</p>
-</div>
+</section>
 
 <footer>
-    <p>© 2026 II-TAMP MMA | Todos los derechos reservados</p>
+    <p>© 2026 TAMP. Todos los derechos reservados.</p>
 </footer>
 
 <script>
